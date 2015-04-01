@@ -1,4 +1,5 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
+%include /usr/share/spin-kickstarts/fedora-live-minimization.ks
 
 selinux --permissive
 
