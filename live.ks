@@ -39,6 +39,8 @@ calamares
 # Desktop
 sddm
 hawaii-shell
+# remove once hawaii-shell has all the deps fixed
+dbus-x11
 
 # Exclude unwanted packages from @anaconda-tools group
 -gfs2-utils
