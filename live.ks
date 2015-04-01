@@ -1,5 +1,6 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 %include /usr/share/spin-kickstarts/fedora-live-minimization.ks
+%include hawaiii-packages.ks
 
 selinux --permissive
 
@@ -37,11 +38,8 @@ repo --name="Hawaii from git" --baseurl=https://copr-be.cloud.fedoraproject.org/
 -anaconda
 calamares
 
-# Desktop
+# Login manager
 sddm
-hawaii-shell
-# remove once hawaii-shell has all the deps fixed
-dbus-x11
 
 # Exclude unwanted packages from @anaconda-tools group
 -gfs2-utils
@@ -50,6 +48,10 @@ dbus-x11
 # Remove unwanted packages
 -setroubleshoot
 -ibus
+
+# Additional packages that would make the image reacher
+fuse
+pavucontrol
 
 %end
 
