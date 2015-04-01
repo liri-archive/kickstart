@@ -57,8 +57,11 @@ pavucontrol
 
 %post
 
-# set up auto-login
+# Set up login manager
 cat > /etc/sddm.conf << EOF
+[Theme]
+Current=hawaii
+
 [Autologin]
 User=livesys
 Session=hawaii
