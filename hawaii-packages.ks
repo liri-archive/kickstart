@@ -1,3 +1,6 @@
+# Hawaii from git
+repo --name="Hawaii from git" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaii-git/fedora-$releasever-$basearch/ --cost=1000
+
 %packages
 
 # Desktop
