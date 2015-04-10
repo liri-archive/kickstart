@@ -1,5 +1,7 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 %include /usr/share/spin-kickstarts/fedora-live-minimization.ks
+#%include rpmfusion-free.ks
+#%include rpmfusion-nonfree.ks
 %include hawaii-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
