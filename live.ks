@@ -2,6 +2,7 @@
 %include /usr/share/spin-kickstarts/fedora-live-minimization.ks
 %include hawaii-packages.ks
 %include desktop-packages.ks
+%include multimedia-packages.ks
 
 selinux --permissive
 
@@ -9,12 +10,6 @@ selinux --permissive
 
 # Hawaii from git
 repo --name="Hawaii from git" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaii-git/fedora-$releasever-$basearch/ --cost=1000
-
-# RPMFusion repos
-#repo --name=rpmfusion-free --baseurl=http://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os
-#repo --name=rpmfusion-free-updates --baseurl=http://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch
-#repo --name=rpmfusion-non-free --baseurl=http://download1.rpmfusion.org/nonfree/fedora/releases/$releasever/Everything/$basearch/os
-#repo --name=rpmfusion-non-free-updates --baseurl=http://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch
 
 # Chromium
 #repo --name="Copr repo for chromium owned by spot" --baseurl=https://copr-be.cloud.fedoraproject.org/results/spot/chromium/fedora-$releasever-$basearch/ --cost=1000
