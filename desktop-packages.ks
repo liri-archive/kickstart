@@ -10,5 +10,6 @@ pcmanfm-qt
 kwrite
 kate
 transmission-qt
+otter-browser
 
 %end
