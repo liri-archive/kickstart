@@ -9,5 +9,6 @@ konsole5
 pcmanfm-qt
 kwrite
 kate
+transmission-qt
 
 %end
