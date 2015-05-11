@@ -88,9 +88,6 @@ User=livesys
 Session=hawaii
 EOF
 
-# sddm doesn't support wayland sessions yet
-cp /usr/share/wayland-sessions/hawaii.desktop /usr/share/xsessions/hawaii.desktop
-
 # Make sure to set the right permissions and selinux contexts
 chown -R liveuser:liveuser /home/liveuser/
 restorecon -R /home/liveuser/
