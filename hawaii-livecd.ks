@@ -87,6 +87,7 @@ Current=hawaii
 User=livesys
 Session=hawaii
 EOF
+rm -f /etc/sddm.conf
 
 # Make sure to set the right permissions and selinux contexts
 chown -R liveuser:liveuser /home/liveuser/
