@@ -6,5 +6,5 @@ Hawaii Kickstarts
 Install dependencies with:
 
 ```sh
-yum install spin-kickstarts livecd-tools
+sudo dnf install -y spin-kickstarts livecd-tools
 ```
