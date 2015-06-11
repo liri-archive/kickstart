@@ -24,8 +24,10 @@
 # $END_LICENSE$
 #
 
-# Hawaii CI
-repo --name="Hawaii CI" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaii-ci/fedora-$releasever-$basearch/ --cost=1000
+# Repository
+#repo --name="Hawaii CI" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaii-ci/fedora-$releasever-$basearch/ --cost=1000
+repo --name="Hawaii Release" --baseurl=http://localhost:9999/fedora-release/$basearch/ --cost=1
+repo --name="Hawaii CI" --baseurl=http://localhost:9999/fedora-ci/$basearch/ --cost=1
 
 %packages
 
