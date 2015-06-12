@@ -91,7 +91,6 @@ cat > /etc/sddm.conf << EOF
 [Theme]
 Current=hawaii
 EOF
-rm -f /etc/sddm.conf
 
 # Default Qt configuration
 mkdir -p /home/liveuser/.config/QtProject
