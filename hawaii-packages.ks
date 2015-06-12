@@ -38,7 +38,5 @@ hawaii-icon-theme
 hawaii-widget-styles
 hawaii-wallpapers
 sddm-theme-hawaii
-# remove once hawaii-shell has all the deps fixed
-dbus-x11
 
 %end
