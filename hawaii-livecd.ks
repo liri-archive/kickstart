@@ -87,6 +87,10 @@ Current=hawaii
 User=livesys
 Session=hawaii
 EOF
+cat > /etc/sddm.conf << EOF
+[Theme]
+Current=hawaii
+EOF
 rm -f /etc/sddm.conf
 
 # Default Qt configuration
