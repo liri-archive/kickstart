@@ -89,6 +89,16 @@ Session=hawaii
 EOF
 rm -f /etc/sddm.conf
 
+# Default Qt configuration
+mkdir -p /home/liveuser/.config/QtProject
+cat > /home/liveuser/.config/QtProject/qtlogging.ini <<EOF
+[Rules]
+qt.qpa.eglfs.kms=true
+qt.qpa.input=true
+greenisland.*=true
+hawaii.*=true
+EOF
+
 # Make sure to set the right permissions and selinux contexts
 chown -R liveuser:liveuser /home/liveuser/
 restorecon -R /home/liveuser/
