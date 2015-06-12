@@ -36,5 +36,6 @@ kwrite
 kate
 transmission-qt
 otter-browser
+qt5-qdbusviewer
 
 %end
