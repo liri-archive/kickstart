@@ -27,7 +27,6 @@
 %packages
 
 # Networking
-@networkmanager-submodules
 nm-connection-editor
 
 # Applications
