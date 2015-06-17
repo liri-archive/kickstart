@@ -102,6 +102,10 @@ greenisland.*=true
 hawaii.*=true
 EOF
 
+# Add liveuser to the video and input groups
+usermod -G video -a liveuser
+usermod -G input -a liveuser
+
 # Make sure to set the right permissions and selinux contexts
 chown -R liveuser:liveuser /home/liveuser/
 restorecon -R /home/liveuser/
