@@ -96,6 +96,9 @@ cat > /etc/sddm.conf << EOF
 Current=hawaii
 EOF
 
+# Set Plymouth theme
+plymouth-set-default-theme hawaii
+
 # Default Qt configuration
 mkdir -p /home/liveuser/.config/QtProject
 cat > /home/liveuser/.config/QtProject/qtlogging.ini <<EOF
