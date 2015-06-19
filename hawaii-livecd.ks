@@ -74,9 +74,11 @@ sddm
 fuse
 pavucontrol
 
-# Themes
+# Themes and settings
 sddm-theme-hawaii
 plymouth-theme-hawaii
+hawaii-settings
+hawaii-settings-plymouth
 
 %end
 

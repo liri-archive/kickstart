@@ -37,5 +37,6 @@ hawaii-icon-theme
 hawaii-widget-styles
 hawaii-wallpapers
 sddm-theme-hawaii
+hawaii-settings-desktop
 
 %end
