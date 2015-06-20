@@ -78,7 +78,6 @@ pavucontrol
 sddm-theme-hawaii
 plymouth-theme-hawaii
 hawaii-settings
-hawaii-settings-plymouth
 
 %end
 
