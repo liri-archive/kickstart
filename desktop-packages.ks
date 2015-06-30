@@ -38,4 +38,8 @@ transmission-qt
 otter-browser
 qt5-qdbusviewer
 
+# Software Center
+muon-discover
+muon-updater
+
 %end
