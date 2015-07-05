@@ -110,6 +110,9 @@ greenisland.*=true
 hawaii.*=true
 EOF
 
+# Regenerate initramfs to pickup the new Plymouth theme
+dracut --regenerate-all --force
+
 # Add liveuser to the video and input groups
 usermod -G video -a liveuser
 usermod -G input -a liveuser
