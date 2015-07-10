@@ -109,6 +109,8 @@ qt.qpa.input=true
 greenisland.*=true
 hawaii.*=true
 EOF
+mkdir -p /root/.config/QtProject
+cat /home/liveuser/.config/QtProject/qtlogging.ini > /root/.config/QtProject/qtlogging.ini
 
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
