@@ -97,6 +97,9 @@ cat > /etc/sddm.conf << EOF
 Current=hawaii
 EOF
 
+# Remove LxQt session (pulled in by pcmanfm)
+rm -f /usr/share/xsessions/lxqt.desktop
+
 # Set Plymouth theme
 plymouth-set-default-theme hawaii
 
