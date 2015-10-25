@@ -25,8 +25,7 @@
 #
 
 # Repository
-repo --name="Hawaii" --baseurl=http://localhost:9999/fedora/$basearch/ --cost=1
-#repo --name="Hawaii for Fedora $releasever - $basearch" --baseurl=https://fedorapeople.org/~plfiorini/hawaii/1/$basearch/latest/
+repo --name="Hawaii for Fedora $releasever - $basearch" --baseurl=@REPO_URL@/ --cost=1
 
 %packages
 
