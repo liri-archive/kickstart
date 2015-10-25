@@ -118,10 +118,6 @@ cat /home/liveuser/.config/QtProject/qtlogging.ini > /root/.config/QtProject/qtl
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
 
-# Add liveuser to the video and input groups
-usermod -G video -a liveuser
-usermod -G input -a liveuser
-
 # Make sure to set the right permissions and selinux contexts
 chown -R liveuser:liveuser /home/liveuser/
 restorecon -R /home/liveuser/
