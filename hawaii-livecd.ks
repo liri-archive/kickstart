@@ -107,8 +107,6 @@ plymouth-set-default-theme hawaii
 mkdir -p /home/liveuser/.config/QtProject
 cat > /home/liveuser/.config/QtProject/qtlogging.ini <<EOF
 [Rules]
-qt.qpa.eglfs.kms=true
-qt.qpa.input=true
 greenisland.*=true
 hawaii.*=true
 EOF
