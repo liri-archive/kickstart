@@ -31,6 +31,7 @@
 %include hawaii-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
+%include misc-packages.ks
 
 selinux --permissive
 
