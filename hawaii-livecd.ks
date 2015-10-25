@@ -112,6 +112,8 @@ qt.qpa.input=true
 greenisland.*=true
 hawaii.*=true
 EOF
+
+# Same Qt configuration for root
 mkdir -p /root/.config/QtProject
 cat /home/liveuser/.config/QtProject/qtlogging.ini > /root/.config/QtProject/qtlogging.ini
 
