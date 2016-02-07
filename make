@@ -1,10 +1,15 @@
 #!/bin/bash
 
 today=$(date +"%Y%m%d")
-releasever=22
+releasever=$1
 #releasever=rawhide
 title=Hawaii
 product=hawaii
+
+if [ -z "$releasever" ]; then
+    echo "Usage: $0 <releasever>"
+    exit 1
+fi
 
 kspath=/tmp/hawaii-livecd-$$.ks
 ksflatten -c hawaii-livecd.ks -o $kspath >& /dev/null
