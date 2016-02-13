@@ -2,7 +2,6 @@
 
 today=$(date +"%Y%m%d")
 releasever=$1
-#releasever=rawhide
 title=Hawaii
 product=hawaii
 
