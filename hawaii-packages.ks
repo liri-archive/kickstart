@@ -34,6 +34,7 @@ repo --name="Hawaii nightly for Fedora $releasever - $basearch" --baseurl=https:
 
 # Desktop
 hawaii-shell
+hawaii-workspace
 hawaii-system-preferences
 hawaii-icon-theme
 hawaii-widget-styles
