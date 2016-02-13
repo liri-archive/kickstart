@@ -24,7 +24,7 @@
 # $END_LICENSE$
 #
 
-%include fedora-live-minimization.ks
+%include /usr/share/spin-kickstarts/fedora-live-minimization.ks
 
 %packages
 
