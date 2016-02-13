@@ -26,6 +26,9 @@
 
 %packages
 
+# Make sure Wayland support for Qt is available
+qt5-qtwayland
+
 # Networking
 nm-connection-editor
 
