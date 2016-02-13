@@ -25,13 +25,13 @@
 #
 
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
-%include /usr/share/spin-kickstarts/fedora-live-minimization.ks
 #%include rpmfusion-free.ks
 #%include rpmfusion-nonfree.ks
 %include hawaii-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
 %include misc-packages.ks
+%include minimization.ks
 
 selinux --permissive
 
@@ -41,11 +41,6 @@ selinux --permissive
 #repo --name="Copr repo for chromium owned by spot" --baseurl=https://copr-be.cloud.fedoraproject.org/results/spot/chromium/fedora-$releasever-$basearch/ --cost=1000
 
 %packages
-
-# Exclude unwanted groups that fedora-live-base.ks pulls in
--@dial-up
--@input-methods
--@standard
 
 @base-x
 @core
@@ -57,7 +52,6 @@ selinux --permissive
 @printing
 
 # Use calamares instead of anaconda
--anaconda
 calamares
 
 # Login manager
