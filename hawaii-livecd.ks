@@ -105,8 +105,12 @@ EOF
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
 
+# Customize live init script
+cat >> /etc/rc.d/init.d/livesys << EOF
+
 # Make sure to set the right permissions and selinux contexts
 chown -R liveuser:liveuser /home/liveuser/
 restorecon -R /home/liveuser/
+EOF
 
 %end
