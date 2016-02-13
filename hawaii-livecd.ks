@@ -101,16 +101,12 @@ rm -f /usr/share/xsessions/lxqt.desktop
 plymouth-set-default-theme hawaii
 
 # Default Qt configuration
-mkdir -p /home/liveuser/.config/QtProject
-cat > /home/liveuser/.config/QtProject/qtlogging.ini <<EOF
+mkdir -p /etc/xdg/QtProject
+cat > /etc/xdg/QtProject/qtlogging.ini <<EOF
 [Rules]
 greenisland.*=true
 hawaii.*=true
 EOF
-
-# Same Qt configuration for root
-mkdir -p /root/.config/QtProject
-cat /home/liveuser/.config/QtProject/qtlogging.ini > /root/.config/QtProject/qtlogging.ini
 
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
