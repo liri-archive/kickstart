@@ -93,6 +93,10 @@ Current=hawaii
 User=livesys
 Session=hawaii
 EOF
+cat > /etc/sddm.conf << EOF
+[Theme]
+Current=hawaii
+EOF
 
 # Remove LxQt session (pulled in by pcmanfm)
 rm -f /usr/share/xsessions/lxqt.desktop
