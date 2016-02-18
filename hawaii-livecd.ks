@@ -27,7 +27,7 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 #%include rpmfusion-free.ks
 #%include rpmfusion-nonfree.ks
-%include hawaii-packages.ks
+%include ux-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
 %include misc-packages.ks
