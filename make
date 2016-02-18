@@ -11,7 +11,7 @@ if [ -z "$releasever" ]; then
 fi
 
 kspath=/tmp/hawaii-livecd-$$.ks
-ksflatten -c hawaii-livecd.ks -o $kspath >& /dev/null
+ksflatten -c hawaii-livecd.ks -o $kspath || exit 1
 
 sudo livecd-creator --releasever=${releasever} -c $kspath -f hawaii-${today}-x86_64 --title=${title} --product=${product}
 #sudo setarch i386 livecd-creator --releasever=${releasever} -c $kspath -f hawaii-${today}-x86 --title=${title} --product=${product}
