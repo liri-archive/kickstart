@@ -29,7 +29,7 @@
 # Hawaii specific packages
 hawaii-release
 hawaii-release-notes
-hawaii-repo
+hawaii-repos
 
 # Add generic logos and remove Fedora stuff
 generic-logos
