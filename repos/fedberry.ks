@@ -29,5 +29,5 @@ repo --name="fedberry" --baseurl=http://download.fedberry.org/releases/$releasev
 #repo --name="fedberry" --baseurl=https://vaughan.fedorapeople.org/releases/$releasever/packages/stable/RPMS/ --cost=800
 
 # FedBerry Testing
-#repo --name="fedberry-testing" --baseurl=http://download.fedberry.org/releases/$releasever/packages/testing/RPMS/ --cost=600
+repo --name="fedberry-testing" --baseurl=http://download.fedberry.org/releases/$releasever/packages/testing/RPMS/ --cost=600
 #repo --name="fedberry-testing" --baseurl=https://vaughan.fedorapeople.org/releases/$releasever/packages/testing/RPMS/ --cost=600
