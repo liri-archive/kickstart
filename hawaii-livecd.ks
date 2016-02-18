@@ -27,11 +27,15 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 #%include rpmfusion-free.ks
 #%include rpmfusion-nonfree.ks
+%include repos/hawaii.ks
 %include ux-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
 %include misc-packages.ks
 %include minimization.ks
+%include snippets/desktop-ux.ks
+%include snippets/cleanup.ks
+%include snippets/logging.ks
 
 selinux --permissive
 
@@ -57,14 +61,6 @@ calamares
 # Login manager
 sddm
 
-# Exclude unwanted packages from @anaconda-tools group
--gfs2-utils
--reiserfs-utils
-
-# Remove unwanted packages
--setroubleshoot
--ibus
-
 # Additional packages that would make the image reacher
 fuse
 pavucontrol
@@ -78,52 +74,10 @@ hawaii-settings
 
 %post
 
-# Desktop configuration
-cat > /etc/sysconfig/desktop <<EOF
-PREFERRED=/usr/bin/hawaii-session
-DISPLAYMANAGER=/usr/bin/sddm
-EOF
-
-# Set up login manager
-cat > /etc/sddm.conf << EOF
-[Theme]
-Current=hawaii
-
-[Autologin]
-User=livesys
-Session=hawaii
-EOF
-cat > /etc/sddm.conf << EOF
-[Theme]
-Current=hawaii
-EOF
-
-# Remove LxQt session (pulled in by pcmanfm)
-rm -f /usr/share/xsessions/lxqt.desktop
-
 # Set Plymouth theme
 plymouth-set-default-theme hawaii
 
-# Default Qt configuration
-mkdir -p /etc/xdg/QtProject
-cat > /etc/xdg/QtProject/qtlogging.ini <<EOF
-[Rules]
-greenisland.*=true
-hawaii.*=true
-EOF
-
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
-
-# Customize live init script
-cat >> /etc/rc.d/init.d/livesys << EOF
-
-# Rebuild schema cache with any overrides we installed
-glib-compile-schemas /usr/share/glib-2.0/schemas
-
-# Make sure to set the right permissions and selinux contexts
-chown -R liveuser:liveuser /home/liveuser/
-restorecon -R /home/liveuser/
-EOF
 
 %end

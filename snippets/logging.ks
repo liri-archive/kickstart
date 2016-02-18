@@ -24,14 +24,14 @@
 # $END_LICENSE$
 #
 
-%packages
+%post
 
-# Desktop
-hawaii-shell
-hawaii-workspace
-hawaii-system-preferences
-hawaii-icon-theme
-hawaii-widget-styles
-hawaii-wallpapers
+# Default Qt configuration
+mkdir -p /etc/xdg/QtProject
+cat > /etc/xdg/QtProject/qtlogging.ini <<EOF
+[Rules]
+greenisland.*=true
+hawaii.*=true
+EOF
 
 %end

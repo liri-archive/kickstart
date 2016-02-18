@@ -24,14 +24,17 @@
 # $END_LICENSE$
 #
 
-%packages
+%post
 
-# Desktop
-hawaii-shell
-hawaii-workspace
-hawaii-system-preferences
-hawaii-icon-theme
-hawaii-widget-styles
-hawaii-wallpapers
+# Customize live init script
+cat >> /etc/rc.d/init.d/livesys << EOF
+
+# Rebuild schema cache with any overrides we installed
+glib-compile-schemas /usr/share/glib-2.0/schemas
+
+# Make sure to set the right permissions and selinux contexts
+chown -R liveuser:liveuser /home/liveuser/
+restorecon -R /home/liveuser/
+EOF
 
 %end

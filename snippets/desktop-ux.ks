@@ -24,14 +24,26 @@
 # $END_LICENSE$
 #
 
-%packages
+%post
 
-# Desktop
-hawaii-shell
-hawaii-workspace
-hawaii-system-preferences
-hawaii-icon-theme
-hawaii-widget-styles
-hawaii-wallpapers
+# Desktop configuration
+cat > /etc/sysconfig/desktop <<EOF
+PREFERRED=/usr/bin/hawaii-session
+DISPLAYMANAGER=/usr/bin/sddm
+EOF
+
+# Set up login manager
+cat > /etc/sddm.conf << EOF
+[Theme]
+Current=hawaii
+
+[Autologin]
+User=livesys
+Session=hawaii
+EOF
+cat > /etc/sddm.conf << EOF
+[Theme]
+Current=hawaii
+EOF
 
 %end

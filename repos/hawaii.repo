@@ -24,14 +24,8 @@
 # $END_LICENSE$
 #
 
-%packages
-
-# Desktop
-hawaii-shell
-hawaii-workspace
-hawaii-system-preferences
-hawaii-icon-theme
-hawaii-widget-styles
-hawaii-wallpapers
-
-%end
+# Repository
+#repo --name="Hawaii for Fedora $releasever - $basearch" --baseurl=@REPO_URL@/ --cost=1
+repo --name="Qt 5 unstable for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/@kdesig/Qt5/fedora-$releasever-$basearch/ --cost=1
+repo --name="Hawaii for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaiios/fedora-$releasever-$basearch/ --cost=1
+repo --name="Hawaii nightly for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaii-nightly/fedora-$releasever-$basearch/ --cost=1

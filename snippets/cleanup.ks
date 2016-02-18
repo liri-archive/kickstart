@@ -24,14 +24,9 @@
 # $END_LICENSE$
 #
 
-%packages
+%post
 
-# Desktop
-hawaii-shell
-hawaii-workspace
-hawaii-system-preferences
-hawaii-icon-theme
-hawaii-widget-styles
-hawaii-wallpapers
+# Remove LxQt session (pulled in by pcmanfm)
+rm -f /usr/share/xsessions/lxqt.desktop
 
 %end
