@@ -73,12 +73,6 @@ raspberrypi-vc-libs
 # We'll want to resize the rootfs on first boot
 rootfs-resize
 
-# Add Generic logos & remove fedora packages.
-generic-logos
--fedora-logos
--fedora-release
--fedora-release-notes
-
 %end
 
 %post
