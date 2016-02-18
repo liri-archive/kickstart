@@ -28,6 +28,7 @@
 #%include rpmfusion-free.ks
 #%include rpmfusion-nonfree.ks
 %include repos/hawaii.ks
+%include remix.ks
 %include ux-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks

@@ -26,6 +26,7 @@
 
 %include /usr/share/spin-kickstarts/fedora-arm-base.ks
 %include repos/fedberry.ks
+%include remix.ks
 %include ux-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
