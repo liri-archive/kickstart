@@ -33,7 +33,6 @@ hawaii-repos
 
 # Add generic logos and remove Fedora stuff
 generic-logos
--fedora-logos
 -fedora-release
 -fedora-release-notes
 
