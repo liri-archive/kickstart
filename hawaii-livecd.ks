@@ -66,6 +66,9 @@ sddm
 fuse
 pavucontrol
 
+# Make sure we have everything for plymouth
+plymouth-scripts
+
 # Themes and settings
 sddm-theme-hawaii
 plymouth-theme-hawaii
