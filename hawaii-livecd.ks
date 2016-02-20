@@ -32,7 +32,6 @@
 %include ux-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
-%include misc-packages.ks
 %include minimization.ks
 %include snippets/desktop-ux.ks
 %include snippets/cleanup.ks
@@ -61,6 +60,9 @@ calamares
 
 # Login manager
 sddm
+
+# QXL video driver for Xorg (until SDDM has a Wayland greeter)
+xorg-x11-drv-qxl
 
 # Additional packages that would make the image reacher
 fuse

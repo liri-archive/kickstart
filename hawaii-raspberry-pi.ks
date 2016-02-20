@@ -30,7 +30,6 @@
 %include ux-packages.ks
 %include desktop-packages.ks
 %include multimedia-packages.ks
-%include misc-packages.ks
 %include minimization.ks
 %include mobile-minimization.ks
 %include snippets/desktop-ux.ks
