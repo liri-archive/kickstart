@@ -27,3 +27,5 @@ if [ ! -f ${isofilename} ]; then
 fi
 
 sha256sum -b --tag ${isofilename} > ${checksumfilename}
+
+sudo chown $SUDO_UID:$SUDO_GID ${isofilename}
