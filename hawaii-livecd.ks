@@ -100,6 +100,7 @@ cat > /usr/bin/calamares-wayland <<EOF
 #!/bin/sh
 export XDG_RUNTIME_DIR=/run/user/$PKEXEC_UID
 export QT_QPA_PLATFORM=wayland
+export WAYLAND_DISPLAY=greenisland-$XDG_SEAT
 exec /usr/bin/calamares -platform wayland
 EOF
 chmod 755 /usr/bin/calamares-wayland
@@ -114,6 +115,7 @@ Icon=drive-harddisk
 Terminal=false
 StartupNotify=false
 Categories=Qt;System;
+OnlyShowIn=X-Hawaii;Hawaii;
 EOF
 #############################################################################
 
