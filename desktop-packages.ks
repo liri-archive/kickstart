@@ -43,7 +43,7 @@ otter-browser
 qt5-qdbusviewer
 
 # Software Center
-muon-discover
-muon-updater
+plasma-discover
+plasma-discover-updater
 
 %end
