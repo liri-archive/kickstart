@@ -33,8 +33,8 @@ qt5-qtwayland
 nm-connection-editor
 
 # Applications
-#konsole5
-hawaii-terminal
+#hawaii-terminal
+qterminal-qt5
 pcmanfm-qt
 kwrite
 kate
