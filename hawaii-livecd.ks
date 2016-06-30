@@ -110,7 +110,8 @@ cat > /usr/share/applications/calamares.desktop <<EOF
 Type=Application
 Version=1.0
 Name=Install to Hard Disk Drive
-Exec=pkexec /usr/bin/calamares-wayland
+#Exec=pkexec /usr/bin/calamares-wayland
+Exec=sudo -E /usr/bin/calamares --platform wayland
 Icon=drive-harddisk
 Terminal=false
 StartupNotify=false
