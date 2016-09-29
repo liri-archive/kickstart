@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -26,10 +26,10 @@
 
 %packages
 
-# Hawaii specific packages
-hawaii-release
-hawaii-release-notes
-hawaii-repos
+# Liri OS specific packages
+lirios-release
+lirios-release-notes
+lirios-repos
 
 # Add generic logos and remove Fedora stuff
 #generic-logos

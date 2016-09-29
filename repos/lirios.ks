@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -25,6 +25,6 @@
 #
 
 # Repository
-#repo --name="Hawaii for Fedora $releasever - $basearch" --baseurl=@REPO_URL@/ --cost=1
-repo --name="Hawaii for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaiios/fedora-$releasever-$basearch/ --cost=1
-repo --name="Hawaii nightly for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/hawaii-nightly/fedora-$releasever-$basearch/ --cost=1
+#repo --name="Liri for Fedora $releasever - $basearch" --baseurl=@REPO_URL@/ --cost=1
+repo --name="Liri for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/liri/fedora-$releasever-$basearch/ --cost=1
+repo --name="Liri nightly for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/liri-nightly/fedora-$releasever-$basearch/ --cost=1

@@ -3,21 +3,21 @@
 today=$(date +"%Y%m%d")
 releasever=$1
 target=$2
-title=Hawaii
-product=hawaii
+title="Liri OS"
+product="lirios"
 
 if [ -z "$releasever" -o -z "$target" ]; then
     echo "Usage: $0 <releasever> <target>"
     exit 1
 fi
 
-if [ ! -f hawaii-${target}.ks ]; then
+if [ ! -f ${product}-${target}.ks ]; then
     echo "Invalid target ${target}"
     exit 1
 fi
 
-kspath=/tmp/hawaii-appliance-$$.ks
-ksflatten -c hawaii-${target}.ks -o $kspath || exit 1
+kspath=/tmp/${product}-appliance-$$.ks
+ksflatten -c ${product}-${target}.ks -o $kspath || exit 1
 
 sudo appliance-creator -c $kspath -n $title --version=$today --checksum -dv --logfile=appliance.log
 

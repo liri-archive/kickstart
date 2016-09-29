@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -27,11 +27,9 @@
 %packages
 
 # Desktop
-hawaii-shell
-hawaii-workspace
-hawaii-system-preferences
-hawaii-icon-theme
-hawaii-widget-styles
-hawaii-wallpapers
+lirios-shell
+lirios-workspace
+lirios-settings
+lirios-wallpapers
 
 %end

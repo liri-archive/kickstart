@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -31,7 +31,7 @@ mkdir -p /etc/xdg/QtProject
 cat > /etc/xdg/QtProject/qtlogging.ini <<EOF
 [Rules]
 greenisland.*=true
-hawaii.*=true
+liri.*=true
 EOF
 
 %end

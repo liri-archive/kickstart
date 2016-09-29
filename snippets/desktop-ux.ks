@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -28,22 +28,22 @@
 
 # Desktop configuration
 cat > /etc/sysconfig/desktop <<EOF
-PREFERRED=/usr/bin/hawaii-session
+PREFERRED=/usr/bin/lirios-session
 DISPLAYMANAGER=/usr/bin/sddm
 EOF
 
 # Set up login manager
 cat > /etc/sddm.conf << EOF
 [Theme]
-Current=hawaii
+Current=lirios
 
 [Autologin]
 User=livesys
-Session=hawaii
+Session=lirios
 EOF
 cat > /etc/sddm.conf << EOF
 [Theme]
-Current=hawaii
+Current=lirios
 EOF
 
 %end

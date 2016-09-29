@@ -1,5 +1,5 @@
-Hawaii Kickstarts
-=================
+Kickstarts
+==========
 
 # Dependencies
 

@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -60,7 +60,7 @@ pavucontrol
 # SDDM is too slow on Raspberry Pi, until I have a greeter
 # working on Wayland we can't do a graphical login
 -sddm
--sddm-theme-hawaii
+-sddm-theme-lirios
 
 # FedBerry specific packages
 fedberry-repo

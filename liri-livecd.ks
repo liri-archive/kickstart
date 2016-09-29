@@ -1,5 +1,5 @@
 #
-# This file is part of Hawaii.
+# This file is part of Liri.
 #
 # Copyright (C) 2015-2016 Pier Luigi Fiorini
 #
@@ -27,7 +27,7 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 #%include repos/rpmfusion-free.ks
 #%include repos/rpmfusion-nonfree.ks
-%include repos/hawaii.ks
+%include repos/lirios.ks
 %include remix.ks
 %include ux-packages.ks
 %include desktop-packages.ks
@@ -72,16 +72,16 @@ pavucontrol
 plymouth-scripts
 
 # Themes and settings
-sddm-theme-hawaii
-plymouth-theme-hawaii
-hawaii-settings
+sddm-theme-lirios
+plymouth-theme-lirios
+lirios-settings
 
 %end
 
 %post
 
 # Set Plymouth theme
-plymouth-set-default-theme hawaii
+plymouth-set-default-theme lirios
 
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
@@ -116,7 +116,7 @@ Icon=drive-harddisk
 Terminal=false
 StartupNotify=false
 Categories=Qt;System;
-OnlyShowIn=X-Hawaii;Hawaii;
+OnlyShowIn=X-Liri;
 EOF
 #############################################################################
 
