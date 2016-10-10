@@ -27,9 +27,9 @@
 %packages
 
 # Desktop
-lirios-shell
-lirios-workspace
-lirios-settings
-lirios-wallpapers
+liri-shell
+liri-workspace
+liri-settings
+#liri-wallpapers
 
 %end

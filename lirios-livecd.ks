@@ -27,7 +27,7 @@
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 #%include repos/rpmfusion-free.ks
 #%include repos/rpmfusion-nonfree.ks
-%include repos/lirios.ks
+%include repos/liri.ks
 %include remix.ks
 %include ux-packages.ks
 %include desktop-packages.ks
@@ -38,11 +38,6 @@
 %include snippets/logging.ks
 
 selinux --permissive
-
-#part / --size 4400
-
-# Chromium
-#repo --name="Copr repo for chromium owned by spot" --baseurl=https://copr-be.cloud.fedoraproject.org/results/spot/chromium/fedora-$releasever-$basearch/ --cost=1000
 
 %packages
 
@@ -74,7 +69,7 @@ plymouth-scripts
 # Themes and settings
 sddm-theme-lirios
 plymouth-theme-lirios
-lirios-settings
+lirios-customization
 
 %end
 

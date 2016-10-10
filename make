@@ -14,10 +14,9 @@ if [ -z "$releasever" ]; then
 fi
 
 kspath=/tmp/${product}-livecd-$$.ks
-ksflatten -c ${product}-livecd.ks -o $kspath || exit 1
+ksflatten --config=${product}-livecd.ks -o $kspath || exit 1
 
-sudo livecd-creator --releasever=${releasever} -c $kspath -f ${imgname} --title=${title} --product=${product}
-#sudo setarch i386 livecd-creator --releasever=${releasever} -c $kspath -f ${product}-${today}-x86 --title=${title} --product=${product}
+livecd-creator --releasever=${releasever} --config=$kspath --fslabel="${imgname}" --title="${title}" --product="${product}"
 
 rm -f $kspath
 
@@ -28,4 +27,4 @@ fi
 
 sha256sum -b --tag ${isofilename} > ${checksumfilename}
 
-sudo chown $SUDO_UID:$SUDO_GID ${isofilename}
+chown $SUDO_UID:$SUDO_GID ${isofilename}

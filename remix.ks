@@ -27,14 +27,14 @@
 %packages
 
 # Liri OS specific packages
-lirios-release
-lirios-release-notes
-lirios-repos
+#lirios-release
+#lirios-release-notes
+#lirios-repos
 
 # Add generic logos and remove Fedora stuff
 #generic-logos
--fedora-release
--fedora-release-notes
+#-fedora-release
+#-fedora-release-notes
 #-fedora-logos
 
 %end
