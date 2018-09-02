@@ -27,9 +27,18 @@
 %packages
 
 # Desktop
-liri-shell
-liri-workspace
+liri-materialdecoration
+liri-networkmanager
+liri-platformtheme
+liri-power-manager
+liri-pulseaudio
+liri-screencast
+liri-screenshot
 liri-settings
-#liri-wallpapers
+liri-shell
+liri-wallpapers
+qml-xwayland
+xdg-desktop-portal-liri
+-xdg-desktop-portal-gtk
 
 %end
