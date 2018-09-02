@@ -30,12 +30,11 @@
 qt5-qtwayland
 
 # Applications
-#lirios-terminal
-qterminal-qt5
+liri-terminal
 liri-files
 liri-text
-transmission-qt
 liri-browser
+transmission-qt
 qt5-qdbusviewer
 
 # Software Center
