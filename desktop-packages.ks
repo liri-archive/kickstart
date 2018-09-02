@@ -33,8 +33,7 @@ qt5-qtwayland
 #lirios-terminal
 qterminal-qt5
 liri-files
-kwrite
-kate
+liri-text
 transmission-qt
 otter-browser
 qt5-qdbusviewer
