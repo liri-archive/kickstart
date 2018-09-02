@@ -16,7 +16,7 @@ fi
 kspath=/tmp/${product}-livecd-$$.ks
 ksflatten --config=${product}-livecd.ks -o $kspath || exit 1
 
-livecd-creator --releasever=${releasever} --config=$kspath --fslabel="${imgname}" --title="${title}" --product="${product}"
+livecd-creator --releasever=${releasever} --config=$kspath --fslabel="${imgname}" --title="${title}" --product="${product}" --cache=cache
 
 rm -f $kspath
 
