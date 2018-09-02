@@ -35,7 +35,7 @@ qterminal-qt5
 liri-files
 liri-text
 transmission-qt
-otter-browser
+liri-browser
 qt5-qdbusviewer
 
 # Software Center
