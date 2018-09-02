@@ -33,13 +33,16 @@ DISPLAYMANAGER=/usr/bin/sddm
 EOF
 
 # Set up login manager
-cat > /etc/sddm.conf << EOF
+rm -f /etc/sddm.conf
+mkdir -p /usr/lib/sddm/sddm.conf.d
+cat > /usr/lib/sddm/sddm.conf.d/00-lirios.conf <<EOF
 [Theme]
 Current=lirios
-
+EOF
+cat > /usr/lib/sddm/sddm.conf.d/01-livemedia.conf <<EOF
 [Autologin]
+Session=liri
 User=liveuser
-Session=lirios
 EOF
 
 %end
