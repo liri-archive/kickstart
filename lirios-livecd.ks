@@ -52,6 +52,7 @@ selinux --permissive
 
 # Use calamares instead of anaconda
 calamares
+liri-calamares-branding
 
 # Login manager
 sddm
@@ -80,38 +81,7 @@ plymouth-set-default-theme lirios
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
 
-#
-# Calamares have problems running on Wayland:
-# - By default Qt applications run with the xcb QPA plugin,
-#   so we need to make sure it will use wayland QPA.
-# - Wayland clients need $XDG_RUNTIME_DIR in order to connect
-#   to the compositor but pkexec won't propagate that
-# To fix these issues we make a script and change the
-# desktop entry to use that instead of the executable.
-#
-
-cat > /usr/bin/calamares-wayland <<EOF
-#!/bin/sh
-export XDG_RUNTIME_DIR=/run/user/\$PKEXEC_UID
-export QT_QPA_PLATFORM=wayland
-export WAYLAND_DISPLAY=greenisland-seat0
-exec /usr/bin/calamares -platform wayland
-EOF
-chmod 755 /usr/bin/calamares-wayland
-
-cat > /usr/share/applications/calamares.desktop <<EOF
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Install to Hard Disk Drive
-#Exec=pkexec /usr/bin/calamares-wayland
-Exec=sudo -E /usr/bin/calamares --platform wayland
-Icon=drive-harddisk
-Terminal=false
-StartupNotify=false
-Categories=Qt;System;
-OnlyShowIn=X-Liri;
-EOF
-#############################################################################
+# Fix Calamares on Wayland
+cp -f /usr/share/liri-calamares-branding/calamares.desktop /usr/share/applications/calamares.desktop
 
 %end
