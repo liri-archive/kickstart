@@ -40,5 +40,6 @@ liri-wallpapers
 qml-xwayland
 xdg-desktop-portal-liri
 -xdg-desktop-portal-gtk
+paper-icon-theme
 
 %end
