@@ -55,7 +55,6 @@ part / --fstype="ext4" --size 3200 --grow --label=rootfs --asprimary
 
 # Additional packages that would make the image reacher
 fuse
-pavucontrol
 
 # SDDM is too slow on Raspberry Pi, until I have a greeter
 # working on Wayland we can't do a graphical login

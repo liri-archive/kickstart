@@ -61,7 +61,6 @@ xorg-x11-drv-qxl
 
 # Additional packages that would make the image reacher
 fuse
-pavucontrol
 
 # Make sure we have everything for plymouth
 plymouth-scripts
