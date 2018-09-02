@@ -67,11 +67,10 @@ wqy-microhei-fonts			# A compact CJK font, to replace:
 -make
 
 # Admin-tools
-# TODO: Uncomment these when we'll have those features
-#-gnome-disk-utility
-#-system-config-date
-#-system-config-services
-#-system-config-users
+-gnome-disk-utility
+-system-config-date
+-system-config-services
+-system-config-users
 
 # Exclude unwanted packages from @anaconda-tools group
 -gfs2-utils
