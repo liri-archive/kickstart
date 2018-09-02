@@ -27,3 +27,4 @@
 # Repository
 #repo --name="Liri for Fedora $releasever - $basearch" --baseurl=@REPO_URL@/ --cost=1
 repo --name="Liri for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/liri-unstable/fedora-$releasever-$basearch/ --cost=1
+repo --name="Liri OS for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/lirios/fedora-$releasever-$basearch/ --cost=1
