@@ -39,7 +39,6 @@ otter-browser
 qt5-qdbusviewer
 
 # Software Center
-plasma-discover
-plasma-discover-updater
+liri-appcenter
 
 %end
