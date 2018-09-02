@@ -32,7 +32,7 @@ qt5-qtwayland
 # Applications
 #lirios-terminal
 qterminal-qt5
-pcmanfm-qt
+liri-files
 kwrite
 kate
 transmission-qt
