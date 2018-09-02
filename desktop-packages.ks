@@ -32,6 +32,9 @@ qt5-qtwayland
 # Virtual keyboard
 qt5-qtvirtualkeyboard
 
+# We want AccountsService
+accountsservice
+
 # Applications
 liri-terminal
 liri-files
