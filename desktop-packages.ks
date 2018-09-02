@@ -29,6 +29,9 @@
 # Make sure Wayland support for Qt is available
 qt5-qtwayland
 
+# Virtual keyboard
+qt5-qtvirtualkeyboard
+
 # Applications
 liri-terminal
 liri-files
