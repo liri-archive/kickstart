@@ -28,7 +28,7 @@
 
 # Desktop configuration
 cat > /etc/sysconfig/desktop <<EOF
-PREFERRED=/usr/bin/lirios-session
+PREFERRED=/usr/bin/liri-session
 DISPLAYMANAGER=/usr/bin/sddm
 EOF
 
@@ -38,12 +38,8 @@ cat > /etc/sddm.conf << EOF
 Current=lirios
 
 [Autologin]
-User=livesys
+User=liveuser
 Session=lirios
-EOF
-cat > /etc/sddm.conf << EOF
-[Theme]
-Current=lirios
 EOF
 
 %end
