@@ -26,7 +26,4 @@
 
 %post
 
-# Remove LxQt session (pulled in by pcmanfm)
-rm -f /usr/share/xsessions/lxqt.desktop
-
 %end

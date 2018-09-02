@@ -30,7 +30,6 @@
 mkdir -p /etc/xdg/QtProject
 cat > /etc/xdg/QtProject/qtlogging.ini <<EOF
 [Rules]
-greenisland.*=true
 liri.*=true
 EOF
 
