@@ -88,4 +88,7 @@ wqy-microhei-fonts			# A compact CJK font, to replace:
 # We have our own portal implementation
 -xdg-desktop-portal-gtk
 
+# Requires Gtk+ and is only useful for the proprietary VMWare
+-open-vm-tools-desktop
+
 %end
