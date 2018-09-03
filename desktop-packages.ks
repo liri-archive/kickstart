@@ -43,4 +43,7 @@ qt5-qdbusviewer
 # Software Center
 liri-appcenter
 
+# Make sure pinentry-qt lands instead of pinentry-gnome3
+pinentry-qt
+
 %end
