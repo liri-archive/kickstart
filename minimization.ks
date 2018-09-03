@@ -80,6 +80,11 @@ wqy-microhei-fonts			# A compact CJK font, to replace:
 -setroubleshoot
 -ibus
 
+# Exclude Gtk+
+-gtk2
+-gtk3
+-gtk4
+
 # We have our own portal implementation
 -xdg-desktop-portal-gtk
 
