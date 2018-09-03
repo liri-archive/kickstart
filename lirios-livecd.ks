@@ -54,6 +54,9 @@ selinux --permissive
 calamares
 liri-calamares-branding
 
+# Calamares needs the locales available to offer them to the user
+glibc-all-langpacks
+
 # Login manager
 sddm
 
