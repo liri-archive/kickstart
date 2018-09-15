@@ -24,15 +24,8 @@
 # $END_LICENSE$
 #
 
+repo --name="Liri for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/liri-unstable/fedora-$releasever-$basearch/ --cost=1
+
 %packages
-
-# Liri OS specific packages
-#lirios-release
-
-# Add generic logos and remove Fedora stuff
-#generic-logos
-#-fedora-release
-#-fedora-release-notes
-#-fedora-logos
-
+liri-unstable-repos
 %end
