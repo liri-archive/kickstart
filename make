@@ -7,16 +7,19 @@ product="lirios"
 imgname=${product}-${today}-x86_64
 isofilename=${imgname}.iso
 checksumfilename=${imgname}-CHECKSUM
+cacherootdir=/var/cache/mkliriosimage
 
 if [ -z "$releasever" ]; then
     echo "Usage: $0 <releasever>"
     exit 1
 fi
 
+mkdir -p $cacherootdir
+
 kspath=/tmp/${product}-livecd-$$.ks
 ksflatten --config=${product}-livecd.ks -o $kspath || exit 1
 
-livecd-creator --releasever=${releasever} --config=$kspath --fslabel="${imgname}" --title="${title}" --product="${product}" --cache=cache
+livecd-creator --releasever=${releasever} --config=$kspath --fslabel="${imgname}" --title="${title}" --product="${product}" --cache=$cacherootdir/dnf
 
 rm -f $kspath
 
