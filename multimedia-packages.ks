@@ -26,9 +26,9 @@
 
 %packages
 
-gstreamer-plugins-base
-gstreamer-plugins-good
-gstreamer-plugins-good-extras
-gstreamer-plugins-bad-free
+gstreamer1-plugins-base
+gstreamer1-plugins-good
+gstreamer1-plugins-good-extras
+gstreamer1-plugins-bad-free
 
 %end
