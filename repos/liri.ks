@@ -24,4 +24,4 @@
 # $END_LICENSE$
 #
 
-repo --name="Liri OS for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/lirios/fedora-$releasever-$basearch/ --cost=1
+repo --name=lirios --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/lirios/fedora-$releasever-$basearch/ --cost=1

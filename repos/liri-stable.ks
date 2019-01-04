@@ -24,7 +24,7 @@
 # $END_LICENSE$
 #
 
-repo --name="Liri for Fedora $releasever - $basearch" --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/liri-stable/fedora-$releasever-$basearch/ --cost=1
+repo --name=liri-stable --baseurl=https://copr-be.cloud.fedoraproject.org/results/plfiorini/liri-stable/fedora-$releasever-$basearch/ --cost=1
 
 %packages
 liri-stable-repos
