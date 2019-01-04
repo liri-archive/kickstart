@@ -28,7 +28,7 @@
 #%include repos/rpmfusion-free.ks
 #%include repos/rpmfusion-nonfree.ks
 %include repos/liri.ks
-%include repos/liri-unstable.ks
+%include repos/liri-nightly.ks
 %include remix.ks
 %include ux-packages.ks
 %include desktop-packages.ks
