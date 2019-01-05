@@ -71,6 +71,8 @@ wqy-microhei-fonts			# A compact CJK font, to replace:
 -system-config-date
 -system-config-services
 -system-config-users
+-system-config-printer
+-system-config-printer-udev
 
 # Exclude unwanted packages from @anaconda-tools group
 -gfs2-utils
