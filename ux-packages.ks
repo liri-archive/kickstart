@@ -27,7 +27,6 @@
 %packages
 
 # Desktop
-liri-materialdecoration
 liri-networkmanager
 liri-platformtheme
 liri-power-manager
