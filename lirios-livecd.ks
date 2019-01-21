@@ -73,6 +73,7 @@ plymouth-scripts
 # Themes and settings
 sddm-theme-lirios
 plymouth-theme-lirios
+-plymouth-theme-charge
 lirios-customization
 
 %end
