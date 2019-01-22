@@ -1,7 +1,8 @@
 #!/bin/bash
 
+curdir=`dirname $(readlink -f $0)`
+
 today=$(date +"%Y%m%d")
-releasever=$1
 title="Liri OS"
 product="lirios"
 imgname=${product}-${today}-x86_64
@@ -9,8 +10,10 @@ isofilename=${imgname}.iso
 checksumfilename=${imgname}-CHECKSUM
 cacherootdir=/var/cache/mkliriosimage
 
+source $curdir/.settings
+
 if [ -z "$releasever" ]; then
-    echo "Usage: $0 <releasever>"
+    echo "Fedora release not specified, please check your .settings"
     exit 1
 fi
 

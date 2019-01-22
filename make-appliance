@@ -1,13 +1,21 @@
 #!/bin/bash
 
+curdir=`dirname $(readlink -f $0)`
+
 today=$(date +"%Y%m%d")
-releasever=$1
-target=$2
+target=$1
 title="Liri OS"
 product="lirios"
 
-if [ -z "$releasever" -o -z "$target" ]; then
-    echo "Usage: $0 <releasever> <target>"
+source $curdir/.settings
+
+if [ -z "$releasever" ]; then
+    echo "Fedora release not specified, please check your .settings"
+    exit 1
+fi
+
+if [ -z "$target" ]; then
+    echo "Usage: $0 <target>"
     exit 1
 fi
 
