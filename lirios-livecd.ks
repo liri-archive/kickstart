@@ -81,7 +81,7 @@ lirios-customization
 %post
 
 # Set Plymouth theme
-plymouth-set-default-theme lirios
+/usr/sbin/plymouth-set-default-theme lirios
 
 # Regenerate initramfs to pickup the new Plymouth theme
 dracut --regenerate-all --force
