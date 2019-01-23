@@ -41,4 +41,7 @@ xdg-desktop-portal-liri
 paper-icon-theme
 liri-color-schemes
 
+# Weston
+weston
+
 %end
