@@ -83,10 +83,7 @@ lirios-customization
 %post
 
 # Set Plymouth theme
-/usr/sbin/plymouth-set-default-theme lirios
-
-# Regenerate initramfs to pickup the new Plymouth theme
-dracut --regenerate-all --force
+/usr/sbin/plymouth-set-default-theme -R lirios
 
 # Fix Calamares on Wayland
 cp -f /usr/share/liri-calamares-branding/calamares.desktop /usr/share/applications/calamares.desktop
