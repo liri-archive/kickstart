@@ -27,4 +27,7 @@
 ostree
 rpm-ostree
 
+# Utilities
+fpaste
+
 %end
