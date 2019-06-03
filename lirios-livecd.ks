@@ -24,7 +24,7 @@
 # $END_LICENSE$
 #
 
-%include /usr/share/spin-kickstarts/fedora-live-base.ks
+%include fedora-live-base.ks
 #%include repos/rpmfusion-free.ks
 #%include repos/rpmfusion-nonfree.ks
 %include repos/liri.ks
