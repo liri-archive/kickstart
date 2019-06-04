@@ -41,9 +41,4 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      archiveArtifacts artifacts: "${imageName}*", onlyIfSuccessful: true
-    }
-  }
 }
