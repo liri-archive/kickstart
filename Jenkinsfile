@@ -16,13 +16,9 @@ pipeline {
     }
   }
   stages {
-    stage('Install tools') {
-      steps {
-        sh 'dnf install -y git spin-kickstarts pykickstart livecd-tools'
-      }
-    }
     stage('Prepare') {
       steps {
+        sh 'dnf install -y git spin-kickstarts pykickstart livecd-tools'
         script {
           def now = new Date()
           today = now.format("yyyyMMdd", TimeZone.getTimeZone('UTC'))
@@ -39,6 +35,20 @@ pipeline {
         sh "livecd-creator --releasever='${params.releasever}' --config=_jenkins.ks --fslabel='${imageName}' --title='${params.title}' --product=lirios"
         sh "sha256sum -b --tag ${isoFileName} > ${checksumFileName}"
       }
+    }
+    stage('Publish') {
+      steps {
+        sh "dnf install -y python3-requests python3-requests-toolbelt"
+        sh "curl -O https://raw.githubusercontent.com/liri-infra/image-manager/develop/image-manager-client && chmod 755 image-manager-client"
+        sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --channel=nightly --image=${isoFileName} --checksum=${checksumFileName}"
+        sh "rm -f ${isoFileName} ${checksumFileName}"
+      }
+    }
+  }
+  post {
+    cleanup {
+      agent none
+      cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
     }
   }
 }
