@@ -45,10 +45,4 @@ pipeline {
       }
     }
   }
-  post {
-    cleanup {
-      agent none
-      cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
-    }
-  }
 }
