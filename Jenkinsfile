@@ -41,7 +41,7 @@ pipeline {
         sh "dnf install -y python3-requests python3-requests-toolbelt"
         sh "curl -O https://raw.githubusercontent.com/liri-infra/image-manager/develop/image-manager-client && chmod 755 image-manager-client"
         sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --channel=nightly --image=${isoFileName} --checksum=${checksumFileName}"
-        sh "rm -f ${isoFileName} ${checksumFileName}"
+        sh "rm -f ${isoFileName} ${checksumFileName} image-manager-client _jenkins.ks"
       }
     }
   }
