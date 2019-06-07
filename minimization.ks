@@ -39,6 +39,8 @@
 
 # We use Calamares instead of anaconda
 -anaconda
+-anaconda-install-env-deps
+-anaconda-live
 -@anaconda-tools
 
 ### Space issues
