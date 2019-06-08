@@ -15,6 +15,9 @@ H(1-59) 0 * * *'''
       args '--privileged --user root'
     }
   }
+  environment {
+      IMAGE_MANAGER_CREDENTIALS = credentials('image-manager')
+  }
   stages {
     stage('Prepare') {
       steps {
@@ -40,7 +43,10 @@ H(1-59) 0 * * *'''
       steps {
         sh "dnf install -y python3-requests python3-requests-toolbelt"
         sh "curl -O https://raw.githubusercontent.com/liri-infra/image-manager/develop/image-manager-client && chmod 755 image-manager-client"
-        sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --channel=nightly --image=${isoFileName} --checksum=${checksumFileName}"
+        script {
+          token = sh(returnStdout: true, script: "echo ${env.IMAGE_MANAGER_CREDENTIALS_PSW} | ./image-manager-client create-token --api-url=${env.IMAGE_MANAGER_URL} ${env.IMAGE_MANAGER_CREDENTIALS_USR}").trim()
+        }
+        sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --token=${token} --channel=nightly --image=${isoFileName} --checksum=${checksumFileName}"
         sh "rm -f ${isoFileName} ${checksumFileName} image-manager-client _jenkins.ks"
       }
     }
