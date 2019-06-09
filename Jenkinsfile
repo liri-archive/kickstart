@@ -1,7 +1,7 @@
 pipeline {
   triggers {
     cron '''TZ=Europe/Rome
-0 0 * * *'''
+H(1-59) 0 * * *'''
   }
   parameters {
     string(name:'releasever', defaultValue:'30', description:'Fedora version')
