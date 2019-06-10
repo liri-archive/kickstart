@@ -24,7 +24,7 @@ H(1-59) 0 * * *'''
         sh 'dnf install -y git spin-kickstarts pykickstart livecd-tools'
         script {
           def now = new Date()
-          today = now.format("yyyyMMdd", TimeZone.getTimeZone('UTC'))
+          today = now.format("yyyyMMdd", TimeZone.getTimeZone('Europe/Rome'))
           imageName = "${params.product}-${today}-${params.basearch}"
           isoFileName = "${imageName}.iso"
           checksumFileName = "${imageName}-CHECKSUM"
