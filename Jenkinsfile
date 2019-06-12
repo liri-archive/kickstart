@@ -20,7 +20,7 @@ pipeline {
   stages {
     stage('Prepare') {
       steps {
-        sh 'dnf install -y git spin-kickstarts pykickstart livecd-tools'
+        sh 'dnf install -y git spin-kickstarts pykickstart livecd-tools gnupg2 pinentry'
         script {
           def now = new Date()
           today = now.format("yyyyMMdd", TimeZone.getTimeZone('Europe/Rome'))
@@ -28,14 +28,19 @@ pipeline {
           isoFileName = "${imageName}.iso"
           checksumFileName = "${imageName}-CHECKSUM"
         }
+        withCredentials([file(credentialsId: 'ci-pgp-key', variable: 'FILE')]) {
+          sh label: 'Import PGP key', script: "gpg --import --no-tty --batch --yes ${FILE}"
+        }
         echo "Building ${imageName}"
         sh "ksflatten --config=${params.product}-${params.target}.ks -o _jenkins.ks"
       }
     }
     stage('Create') {
       steps {
-        sh "livecd-creator --releasever='${params.releasever}' --config=_jenkins.ks --fslabel='${imageName}' --title='${params.title}' --product=lirios"
-        sh "sha256sum -b --tag ${isoFileName} > ${checksumFileName}"
+        sh label: 'Create image', script: "livecd-creator --releasever='${params.releasever}' --config=_jenkins.ks --fslabel='${imageName}' --title='${params.title}' --product=lirios"
+        withCredentials([file(credentialsId: 'ci-pgp-passphrase', variable: 'FILE')]) {
+          sh label: 'Checksum', script: "sha256sum -b --tag ${isoFileName} | gpg --clearsign --pinentry-mode=loopback --passphrase-file=${FILE} --no-tty --batch --yes > ${checksumFileName}"
+        }
       }
     }
     stage('Publish') {
