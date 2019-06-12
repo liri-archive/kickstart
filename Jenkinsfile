@@ -1,8 +1,4 @@
 pipeline {
-  triggers {
-    cron '''TZ=Europe/Rome
-H(1-59) 0 * * *'''
-  }
   parameters {
     string(name:'releasever', defaultValue:'30', description:'Fedora version')
     string(name:'basearch', defaultValue:'x86_64', description:'Architecture')
