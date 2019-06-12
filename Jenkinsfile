@@ -1,9 +1,11 @@
 pipeline {
   parameters {
     string(name:'releasever', defaultValue:'30', description:'Fedora version')
-    string(name:'basearch', defaultValue:'x86_64', description:'Architecture')
-    choice(name:'channel', choices:['stable', 'nightly'], description:'Channel')
-    choice(name:'product', choices:['lirios'], description:'Image to build')
+    choice(name:'basearch', choices:['x86_64'], description:'Architecture')
+    choice(name:'type', choices:['stable', 'unstable'], description:'Build type')
+    choice(name:'channel', choices:['releases', 'nightly'], description:'Channel')
+    choice(name:'product', choices:['lirios'], description:'Product to build')
+    choice(name:'target', choices:['livecd'], description:'Target to build')
     string(name:'title', defaultValue:'Liri OS', description:'Image title')
   }
   agent {
@@ -27,7 +29,7 @@ pipeline {
           checksumFileName = "${imageName}-CHECKSUM"
         }
         echo "Building ${imageName}"
-        sh "ksflatten --config=${params.product}-livecd.ks -o _jenkins.ks"
+        sh "ksflatten --config=${params.product}-${params.target}.ks -o _jenkins.ks"
       }
     }
     stage('Create') {
