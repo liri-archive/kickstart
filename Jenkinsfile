@@ -2,6 +2,7 @@ pipeline {
   parameters {
     string(name:'releasever', defaultValue:'30', description:'Fedora version')
     string(name:'basearch', defaultValue:'x86_64', description:'Architecture')
+    choice(name:'channel', choices:['stable', 'nightly'], description:'Channel')
     choice(name:'product', choices:['lirios'], description:'Image to build')
     string(name:'title', defaultValue:'Liri OS', description:'Image title')
   }
@@ -42,7 +43,7 @@ pipeline {
         script {
           token = sh(returnStdout: true, script: "echo ${env.IMAGE_MANAGER_CREDENTIALS_PSW} | ./image-manager-client create-token --api-url=${env.IMAGE_MANAGER_URL} ${env.IMAGE_MANAGER_CREDENTIALS_USR}").trim()
         }
-        sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --token=${token} --channel=nightly --image=${isoFileName} --checksum=${checksumFileName}"
+        sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --token=${token} --channel=${params.channel} --image=${isoFileName} --checksum=${checksumFileName}"
         sh "rm -f ${isoFileName} ${checksumFileName} image-manager-client _jenkins.ks"
       }
     }
