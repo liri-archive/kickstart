@@ -26,13 +26,13 @@
 
 %include /usr/share/spin-kickstarts/fedora-arm-base.ks
 %include repos/fedberry.ks
-%include remix.ks
-%include ux-packages.ks
-%include desktop-packages.ks
-%include multimedia-packages.ks
-%include minimization.ks
-%include additional-packages.ks
-%include mobile-minimization.ks
+%include packages/remix.ks
+%include packages/ux-packages.ks
+%include packages/desktop-packages.ks
+%include packages/multimedia-packages.ks
+%include packages/minimization.ks
+%include packages/additional-packages.ks
+%include packages/mobile-minimization.ks
 %include snippets/services.ks
 %include snippets/desktop-ux.ks
 %include snippets/cleanup.ks
