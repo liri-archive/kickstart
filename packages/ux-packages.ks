@@ -31,7 +31,7 @@ liri-networkmanager
 liri-platformtheme
 liri-power-manager
 liri-pulseaudio
-liri-screencast
+#liri-screencast
 liri-screenshot
 liri-settings
 liri-shell
