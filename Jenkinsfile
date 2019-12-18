@@ -1,6 +1,6 @@
 pipeline {
   parameters {
-    string(name:'releasever', defaultValue:'30', description:'Fedora version')
+    string(name:'releasever', defaultValue:'31', description:'Fedora version')
     choice(name:'basearch', choices:['x86_64'], description:'Architecture')
     choice(name:'type', choices:['stable', 'unstable'], description:'Build type')
     choice(name:'channel', choices:['releases', 'nightly'], description:'Channel')
