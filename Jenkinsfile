@@ -10,7 +10,7 @@ pipeline {
   }
   agent {
     docker {
-      image "liridev/ci-fedora-jenkins:latest"
+      image "liridev/ci-fedora-jenkins:${params.releasever}"
       args '--privileged'
     }
   }
