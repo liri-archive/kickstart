@@ -10,8 +10,8 @@ pipeline {
   }
   agent {
     docker {
-      image "fedora:${params.releasever}"
-      args '--privileged --user root'
+      image "liridev/ci-fedora-jenkins:latest"
+      args '--privileged'
     }
   }
   environment {
@@ -20,7 +20,7 @@ pipeline {
   stages {
     stage('Prepare') {
       steps {
-        sh 'dnf install -y git spin-kickstarts pykickstart livecd-tools gnupg2 pinentry'
+        sh 'sudo dnf install -y git spin-kickstarts pykickstart livecd-tools gnupg2 pinentry'
         script {
           def now = new Date()
           today = now.format("yyyyMMdd", TimeZone.getTimeZone('Europe/Rome'))
@@ -37,7 +37,8 @@ pipeline {
     }
     stage('Create') {
       steps {
-        sh label: 'Create image', script: "livecd-creator --releasever='${params.releasever}' --config=_jenkins.ks --fslabel='${imageName}' --title='${params.title}' --product=lirios"
+        sh label: 'Create image', script: "sudo livecd-creator --releasever='${params.releasever}' --config=_jenkins.ks --fslabel='${imageName}' --title='${params.title}' --product=lirios"
+        sh label: 'Change permission', script: "sudo chmod o+r ${isoFileName} ${checksumFileName}"
         withCredentials([file(credentialsId: 'ci-pgp-passphrase', variable: 'FILE')]) {
           sh label: 'Checksum', script: "sha256sum -b --tag ${isoFileName} | gpg --clearsign --pinentry-mode=loopback --passphrase-file=${FILE} --no-tty --batch --yes > ${checksumFileName}"
         }
@@ -45,13 +46,13 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        sh "dnf install -y python3-requests python3-requests-toolbelt"
+        sh "sudo dnf install -y python3-requests python3-requests-toolbelt"
         sh "curl -O https://raw.githubusercontent.com/liri-infra/image-manager/develop/image-manager-client && chmod 755 image-manager-client"
         script {
           token = sh(returnStdout: true, script: "echo ${env.IMAGE_MANAGER_CREDENTIALS_PSW} | ./image-manager-client create-token --api-url=${env.IMAGE_MANAGER_URL} ${env.IMAGE_MANAGER_CREDENTIALS_USR}").trim()
         }
         sh "./image-manager-client upload --api-url=${env.IMAGE_MANAGER_URL} --token=${token} --channel=${params.channel} --image=${isoFileName} --checksum=${checksumFileName}"
-        sh "rm -f ${isoFileName} ${checksumFileName} image-manager-client _jenkins.ks"
+        sh "sudo rm -f ${isoFileName} ${checksumFileName} image-manager-client _jenkins.ks"
       }
     }
   }
